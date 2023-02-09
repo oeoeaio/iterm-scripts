@@ -6,13 +6,7 @@ from utils import *
 import glob
 import os
 
-usage = "Usage: start.py target_dir"
-
 project_directory = os.getcwd()
-if len(sys.argv) == 2 and sys.argv[1] != '.':
-    project_directory = sys.argv[1]
-if len(sys.argv) > 2:
-    sys.exit("Expected one argument: " + usage)
 
 async def main(connection):
     app = await iterm2.async_get_app(connection)
@@ -24,7 +18,7 @@ async def main(connection):
         if glob.glob(runner['start']):
             split_session = await find_or_create_runner_session(app, curr_session, runner, split_session, split_vertical, split_profile)
             split_vertical = False
-    await curr_session.async_send_text("nvim " + project_directory + "\n")
+    await curr_session.async_send_text("nvim .\n")
     await curr_session.async_send_text(" t" + "\n")
     await curr_session.async_activate()
 
