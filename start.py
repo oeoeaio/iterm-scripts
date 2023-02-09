@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 
+# There is an alias for this script in my .zshrc (dev).
+# When run, this scripts boots a dev environment in the
+# current working directory. This involves looking for
+# any scripts which match the runners defined in utils.py
+# and setting up a new pane for those that exist, as well
+# starting nvim.
+
 import iterm2
 import sys
 from utils import *

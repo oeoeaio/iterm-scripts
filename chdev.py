@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+# There is an alias for this script in my .zshrc (chdev).
+# When run, it uses fzf to fuzzy search for a project
+# directory under ~/projects. When a directory is selected
+# it will cd into that directory and use dev (start.py) to
+# start a dev environment.
+
 import iterm2
 import subprocess
 import sys

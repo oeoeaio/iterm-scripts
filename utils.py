@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# Utility functions used by other scripts in this directory.
+
 import iterm2
 import sys
 

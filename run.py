@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
 
+# This scripts accepts the name of a runner (see utils.py)
+# and an optional command. When the script is executed for
+# the first time, a new pane is created, the specified
+# runner is booted (e.g. auto/dev) and the command is run.
+# find_or_create_runner_session saves a reference to the
+# pane that was created in the current session, so for
+# subsequent script calls the command is executed in the
+# existing runner pane.
+
 import iterm2
 import sys
 from utils import *
