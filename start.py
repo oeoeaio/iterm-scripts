@@ -25,9 +25,9 @@ async def main(connection):
         if glob.glob(runner['start']):
             split_session = await find_or_create_runner_session(app, curr_session, runner, split_session, split_vertical, split_profile)
             split_vertical = False
+    await find_or_create_runner_session(app, curr_session, default_runner, split_session, split_vertical, split_profile)
     await curr_session.async_send_text("nvim .\n")
     await curr_session.async_send_text(" t" + "\n")
-    await curr_session.async_activate()
 
 def profile_customisations():
     profile = iterm2.LocalWriteOnlyProfile()

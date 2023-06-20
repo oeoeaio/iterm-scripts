@@ -7,10 +7,11 @@ import sys
 
 runners = [
     { 'name': 'dev', 'start': 'auto/dev' },
-    { 'name': 'psql', 'start': 'auto/pg/psql' },
     { 'name': 'deploytools', 'start': 'auto/with-deploytools' },
     { 'name': 'db-shell', 'start': 'auto/db-shell*' },
 ]
+
+default_runner = { 'name': 'default', 'start': None }
 
 def get_current_session(app):
     window = app.current_terminal_window
@@ -38,6 +39,5 @@ async def find_or_create_runner_session(app, main_session, runner, split_session
     return runner_session
 
 def get_runner_by_name(name):
-    default_runner = { 'name': 'default', 'start': None }
     return next((r for r in runners if r['name'] == name), default_runner)
 
